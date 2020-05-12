@@ -6,8 +6,8 @@ Currently, Bingbon Exchange's web is quite simple and easy to use. But it lacks 
 
 # How to install
 I recommend you to install this using Google's Chrome Web Store, at: <to be updated>.
-Or you can download from 
-And you're welcome to fork and add more functionalities that you love.
+  Or you can download from: https://github.com/lvdiev/Bingbon-Helper/releases
+  And you're welcome to fork and add more functionalities that you love.
 
 # What does it have so far?
 ## +Display current price on title
