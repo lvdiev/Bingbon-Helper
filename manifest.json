@@ -1,0 +1,56 @@
+{
+  "name": "Bingbon Helper",
+  "version": "0.1.0.1",
+  "description": "A helper that brings you back to the shore",
+  "permissions": [
+    "cookies",
+    "activeTab",
+    "declarativeContent",
+    "storage"
+  ],
+  "options_page": "options.html",
+  "background": {
+    "scripts": [
+      "background.js",
+      "scripts/jquery.min.js"
+    ],
+    "persistent": false
+  },
+  "page_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/market16.png",
+      "32": "images/market32.png",
+      "48": "images/market48.png",
+      "128": "images/market128.png"
+    }
+  },
+  "icons": {
+    "16": "images/market16.png",
+    "32": "images/market32.png",
+    "48": "images/market48.png",
+    "128": "images/market128.png"
+  },
+  "manifest_version": 2,
+  "content_scripts": [
+    {
+      "matches": [
+        "*://bingbon.pro/*/trade"
+      ],
+      "js": [
+        "scripts/script.js",
+        "scripts/jquery.min.js"
+      ],
+      "css":[
+        "css/style.css"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "web_accessible_resources": [
+    "scripts/pagination.js",
+    "styles/kipalog.css",
+    "pagination.html"
+  ]
+}

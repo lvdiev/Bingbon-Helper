@@ -1,0 +1,29 @@
+
+tr.vst-history {
+    opacity: 0.2;
+}
+
+.el-dialog.close_position{
+    position: absolute;
+    right: 79px;
+    bottom: 0px !important;
+    height: 258px;
+    top: unset;
+}
+
+#Embed, .u-userLauncherColor, .zEWidget-launcher.zEWidget-launcher--active{
+	display: none !important;
+}
+.pagination{
+	position: absolute !important;
+    right: 7px !important;
+    top: -37px !important;
+    height: 26px !important;
+    width: 250px !important;
+}
+.c-holding-panel.bb-deep{
+	width: 271px !important;
+}
+.el-popover__reference{
+	display: none;
+}
