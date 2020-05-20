@@ -23,3 +23,4 @@ This tab is not so important, but it takes some pixels that would make the impor
 # What's next?
 I'm working on it to add some more funtionalities. You are welcome to fork and submit the merge request or issue.
 
+trailing stop

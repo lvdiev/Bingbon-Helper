@@ -69,5 +69,53 @@ function setVstOpacityTimer() {
             // rowEls[i].style.display = "none";
             $(rowEls[i]).addClass("vst-history");
         }
+
+        countTrigger();
+        countHoldingOrder()
     }, 1000)
+}
+
+async function countTrigger() {
+    let triggerBtn = $("#app > div > div.bottom.flex > div.holding_panel > ul > li:nth-child(2)")[0];
+    const res = await getTriggerList();
+    const count = res.data && res.data.resultSize;
+    // console.log("res", count);
+
+    triggerBtn.innerText = count ? `Trigger (${count})` : "Trigger";
+}
+
+async function countHoldingOrder() {
+    let holdingBtn = $("#app > div > div.bottom.flex > div.holding_panel > ul > li:nth-child(1)")[0];
+    const res = await getHoldingOrderList();
+    const count = res.data && res.data.orders && res.data.orders.length;
+    // console.log("res", count);
+
+    holdingBtn.innerText = count ? `My Position (${count})` : "My Position";
+}
+
+///libs
+
+async function getHoldingOrderList() {
+    const res = await fetch("https://api-cb.qpyx.xyz/api/v1/contract/order/hold?fundType=1&pagingSize=10&pageId=0", {
+        "method": "GET",
+        "headers": {
+            "accept": "application/json, text/plain, */*",
+            "authorization": API_TOKEN,
+            "content-type": "application/json",
+        },
+    });
+
+    return await res.json();
+}
+async function getTriggerList() {
+    const res = await fetch("https://api-cb.qpyx.xyz/api/v1/contract/order/delegation/list?fundType=1&pagingSize=10&pageId=0&statusList=0", {
+        "method": "GET",
+        "headers": {
+            "accept": "application/json, text/plain, */*",
+            "authorization": API_TOKEN,
+            "content-type": "application/json",
+        },
+    });
+
+    return await res.json();
 }
